@@ -40,8 +40,8 @@ To save you from having to count the items above, you can assume that length of 
 
 i.e. is31Flavors(originalFlavors) will return TRUE.*/
 
-function is31Flavors(flavors){
-    if(flavors.length === 31){
+function is31Flavors(iceCream){
+    if(iceCream.length === 31){
         return true;
     } else {
         return false;
@@ -61,9 +61,9 @@ Your function should add the flavor to the front of the array and console.log th
 
 For example addFlavor("Rainbow Sherbert", originalFlavors) should return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"] */ 
 
-function addFlavor(newFlavor, flavors){
-    flavors.unshift(newFlavor);
-    console.log(flavors)
+function addFlavor(newFlavor, iceCream){
+    iceCream.unshift(newFlavor);
+    console.log(iceCream)
 }
 
 addFlavor("Rainbow Sherbert", originalFlavors);
@@ -78,9 +78,9 @@ Your function should remove a flavor from the end of the array and console.log t
 
 For example removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]*/ 
 
-function removeLastFlavor(flavors){
-    flavors.pop();
-    console.log(flavors);
+function removeLastFlavor(iceCream){
+    iceCream.pop();
+    console.log(iceCream);
 }
 
 removeLastFlavor(originalFlavors);
@@ -94,8 +94,8 @@ Your function should accept:
 
 For example, getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully. */
 
-function getFlavorByIndex(flavors, index){
-    console.log(flavors[index]);
+function getFlavorByIndex(iceCream, index){
+    console.log(iceCream[index]);
 }
 
 getFlavorByIndex(originalFlavors, 2);
@@ -113,11 +113,13 @@ Hint: You can use .splice() for this
 
 */
 
-function removeFlavorByName(/*code here*/){
-
-    /*code here*/
-
+function removeFlavorByName(iceCream, flavor){
+    index = iceCream.indexOf(flavor);
+    iceCream.splice(index, 1);
+    console.log(iceCream);
 }
+
+removeFlavorByName(originalFlavors, "Vanilla");
 
 
 /* Task 6: With all of these changes going on, we don't want to lose track of the actual, original 31 flavors. Write a function called copy that makes a copy of the array. 
