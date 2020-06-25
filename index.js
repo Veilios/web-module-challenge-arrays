@@ -154,16 +154,17 @@ DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem.
 
 hint - you can use the .includes method to help you solve this */
 
-function filterByWord(iceCream, flavor){  
-    for(i = 0; i < iceCream.length; i++){
-        if(iceCream[i].includes("Chocolate") === true){
-            
+function filterByWord(iceCream, flavor){
+    holiday = [];
+    for(let i = 0; i < iceCream.length; i++){
+        if(iceCream[i].includes(flavor)){
+            holiday.push(iceCream[i]);
         }
     }
-    console.log(holiday);
+    return holiday;
 }
-let holiday = [];
-filterByWord(originalFlavors, "Chocolate");
+
+console.log(filterByWord(originalFlavors, "Chocolate"));
 
 /* 🧁🍦🍨 STRETCH 🍨🍦🍫*/ 
 
